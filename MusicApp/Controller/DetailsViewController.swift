@@ -28,7 +28,7 @@ class DetailsViewController: UIViewController {
         allTracksViewModel?.player?.pause()
     }
     
-    func setupScreen(){
+    func setupScreen() {
         setupCurrentTrackDetails()
         timerLabel.text = "00:00"
         playPauseButton.isEnabled = true
@@ -39,7 +39,7 @@ class DetailsViewController: UIViewController {
         allTracksViewModel?.setupPlayer(withIndex: rowPosition ?? 0)
     }
     
-    func setupCurrentTrackDetails(){
+    func setupCurrentTrackDetails() {
         guard let index = rowPosition else { return }
         mainImage.sd_setImage(with: URL(string: allTracksViewModel?.allTracks[index].album.coverXl ?? "")!)
         imageForBackground.sd_setImage(with: URL(string: allTracksViewModel?.allTracks[index].album.coverXl ?? "g")!)

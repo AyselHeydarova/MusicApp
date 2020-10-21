@@ -2,22 +2,21 @@
 import Foundation
 struct AllData: Codable {
     let data: [Track]
-    let total: Int
-    let next: String
+    let total: Int?
+    let next: String?
 }
 
-// MARK: - Datum
 struct Track: Codable {
-    let id: Int
-    let readable: Bool
-    let title, titleShort: String
+    let id: Int?
+    let readable: Bool?
+    let title, titleShort: String?
     let titleVersion: TitleVersion?
-    let link: String
-    let duration, rank: Int
-    let explicitLyrics: Bool
-    let explicitContentLyrics, explicitContentCover: Int
-    let preview: String
-    let md5Image: String
+    let link: String?
+    let duration, rank: Int?
+    let explicitLyrics: Bool?
+    let explicitContentLyrics, explicitContentCover: Int?
+    let preview: String?
+    let md5Image: String?
     let artist: Artist
     let album: Album
     let type: DatumType
@@ -36,14 +35,13 @@ struct Track: Codable {
     }
 }
 
-// MARK: - Album
 struct Album: Codable {
-    let id: Int
-    let title: String
-    let cover: String
-    let coverSmall, coverMedium, coverBig, coverXl: String
-    let md5Image: String
-    let tracklist: String
+    let id: Int?
+    let title: String?
+    let cover: String?
+    let coverSmall, coverMedium, coverBig, coverXl: String?
+    let md5Image: String?
+    let tracklist: String?
     let type: AlbumType
 
     enum CodingKeys: String, CodingKey {
@@ -61,13 +59,12 @@ enum AlbumType: String, Codable {
     case album = "album"
 }
 
-// MARK: - Artist
 struct Artist: Codable {
-    let id: Int
-    let name: String
-    let link, picture: String
-    let pictureSmall, pictureMedium, pictureBig, pictureXl: String
-    let tracklist: String
+    let id: Int?
+    let name: String?
+    let link, picture: String?
+    let pictureSmall, pictureMedium, pictureBig, pictureXl: String?
+    let tracklist: String?
     let type: ArtistType
 
     enum CodingKeys: String, CodingKey {
